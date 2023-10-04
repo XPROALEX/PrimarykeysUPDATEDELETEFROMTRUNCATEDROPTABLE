@@ -1,0 +1,56 @@
+CREATE TABLE Customers (
+id INT  AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+surname VARCHAR(255)NOT NULL,
+email VARCHAR(255) NOT NULL,
+);
+
+INSERT INTO Customers (name, surname, email) VALUES ('Alessandro','Venuti','alessandroemail@mail.com');
+INSERT INTO Customers (name, surname, email) VALUES ('Mario','Verdi','marioemail@mail.com');
+INSERT INTO Customers (name, surname, email) VALUES ('Paolo','Rossi','paoloemail@mail.com');
+
+UPDATE Customers SET email='marionuovamail@mail.com' WHERE id=2;
+
+DELETE FROM Customers WHERE id=1;
+
+TRUNCATE TABLE Customers;
+
+Look at the tables below and write which column(s) you think would make a good primary key.
+
+6-Question
+
+CREATE TABLE Customers (
+ customer_id INT NOT NULL AUTO_INCREMENT,
+ first_name VARCHAR(255) NOT NULL,
+ last_name VARCHAR(255) NOT NULL,
+ email VARCHAR(255) NOT NULL,
+ PRIMARY KEY (customer_id)
+);
+--Qui la primary key è impostata su 'customer_id' ed è ottima ma non capisco il 'NOT NULL' se è presente 'AUTO_INCREMENT'.
+
+7-Question
+
+CREATE TABLE Products (
+ product_name VARCHAR(255) NOT NULL,
+ product_description VARCHAR(255) NOT NULL,
+ product_price DECIMAL(10, 2) NOT NULL,
+ product_quantity INT NOT NULL
+);
+-- Imposterei la primary key su 'product_name'
+
+8-Question
+
+CREATE TABLE Orders (
+ order_id INT NOT NULL AUTO_INCREMENT,
+ customer_id INT NOT NULL,
+ expected_arrival_time DATE
+);
+--Imposterei la primary key su 'order_id' cos'ì da organizzare gli ordini e cercarli rapidamente 
+9-Question
+
+CREATE TABLE Product_Orders (
+ order_id INT NOT NULL AUTO_INCREMENT,
+ product_name VARCHAR(255) NOT NULL,
+ total_revenue DOUBLE
+);
+--anche qui userei la primary key su 'order_id'
